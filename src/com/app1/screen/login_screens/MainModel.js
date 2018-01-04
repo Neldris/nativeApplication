@@ -1,6 +1,6 @@
 /*use strict*/
 import React, { Component } from 'react';
-import styles from '../../../../resources/style/App1StyleSheet';
+import styles from '../../../../../resources/style/App1StyleSheet';
 import {
     Alert,
     Platform,

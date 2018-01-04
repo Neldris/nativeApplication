@@ -91,21 +91,33 @@ const styles = StyleSheet.create({
     },
     /** Login Reset view*/
     log_m_reset_con:{
-        alignItems:'flex-end',
-        marginBottom: 20,
-        marginTop: 20,
+        marginBottom: 50,
+        marginTop: 10,
+        alignItems: 'flex-end',
     },
 
     log_m_reset_text:{
         borderLeftWidth:5,
+        borderRightWidth:5,
         borderColor:'green',
-        paddingLeft: 10
+        paddingLeft: 10,
+        paddingRight: 10,
+        color: 'green',
     },
 
     /** Login Register view*/
     log_m_reg_con:{
-        marginTop:100,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
+    log_m_reg_text:{
+        borderLeftWidth:5,
+        borderRightWidth:5,
+        borderColor:'green',
+        paddingLeft: 10,
+        paddingRight: 10,
+    },
+
 
 });
 

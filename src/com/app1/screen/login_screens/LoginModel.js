@@ -2,7 +2,8 @@
 import React, { Component } from 'react';
 import styles from '../../../../../resources/style/App1StyleSheet'
 import GenericLoginModel from '../../util/GenericLoginModel';
-import AsyncApp1Storage from '../../storage/AsyncApp1Storage';
+//import AsyncApp1Storage from '../../storage/AsyncApp1Storage';
+import {AsyncStorage} from 'react-native';
 
 import {
     TextInput,
@@ -26,14 +27,15 @@ export default class LoginModel extends Component<{}> {
     /**
      * Method to invoke on Continue click
      */
-    loginIntent = () =>{
+     loginIntent=()=>{
         //Set the params for Navigation
         var params = {
             'username':this.state.username,
             'password': this.state.password,
             'pinCode': this.state.pinCode, };
-        AsyncApp1Storage.save('USER',this.state.username,params);
-
+        AsyncStorage.setItem('USER',this.state.username);
+        console.log(this.state.username+' -----');
+        //AsyncStorage.getItem('USER').then((u)=>{ alert(u)}).done();
         this.props.navigation.navigate('LandingModel',{
                                                         'username':this.state.username,
                                                         'password': this.state.password,

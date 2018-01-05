@@ -1,7 +1,7 @@
 /*use strict*/
 import React, { Component } from 'react';
 import GenericLoginModel from '../../util/GenericLoginModel';
-import AsyncApp1Storage  from '../../storage/AsyncApp1Storage';
+//import AsyncApp1Storage  from '../../storage/AsyncApp1Storage';
 import {AsyncStorage} from 'react-native';
 
 import {
@@ -13,6 +13,9 @@ export default class LandingModel extends Component<{}> {
 
     constructor(props){
         super(props);
+        this.state={
+            username:''
+        }
     }
 
     /**
@@ -40,13 +43,13 @@ export default class LandingModel extends Component<{}> {
      * Void initChech to initialise
      * Logins
      */
-    initCheck(){
+    async initCheck(){
         try {
                const getNavParams = this.props.navigation.state.params;
-               let pst = AsyncApp1Storage.get('USER');
-               console.log('User >><<'+pst);
-
-               //console.log(getNavParams.username+'User ');
+               AsyncStorage.getItem('USER').then((user)=>{
+                   this.setState({username:user});
+               }).done();
+               console.log('User >><<'+this.state.username);
 
                 /**Check for getNavParams integrity
                 */
